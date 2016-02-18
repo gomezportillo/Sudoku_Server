@@ -1,0 +1,9 @@
+localhost:8080/JuegosEnGrupo/Register.action?command={email : "pedroma", pwd1 : "123", pwd2 : "123"}
+
+localhost:8080/JuegosEnGrupo/Register.action?command={email : "pedroma2", pwd1 : "234", pwd2 : "234"}
+
+localhost:8080/JuegosEnGrupo/Login.action?command={email : "pedroma", pwd : "123", userType : "hola"}
+
+localhost:8080/JuegosEnGrupo/Login.action?command={email : "pedroma2", pwd : "234", userType : "hola"}
+
+localhost:8080/JuegosEnGrupo/GetMensajes.action?command={email: "pedroma"}

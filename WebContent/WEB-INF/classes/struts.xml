@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.action.excludePattern" value="/notificador/.*?"/>
+    
+	<package name="common" namespace="/" extends="json-default">
+		<global-results>
+			<result name="error">errorRegistro.jsp</result>
+		</global-results>
+
+		<global-exception-mappings>
+		 	<exception-mapping exception="javax.mail.MessagingException" result="error" />
+		 	<exception-mapping exception="java.sql.SQLException" result="error" />
+		 	<exception-mapping exception="java.lang.Exception" result="error" />
+		</global-exception-mappings>
+		
+		<action name="JSONAction" class="edu.uclm.esi.common.server.actions.JSONAction">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action> 
+		 	
+	 	<action name="Register" class="edu.uclm.esi.common.server.actions.Register">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+			<result name="input" type="json"/>
+		</action> 
+
+	 	<action name="Login" class="edu.uclm.esi.common.server.actions.Login">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action> 
+		
+		<action name="LoginWithGoogle" class="edu.uclm.esi.common.server.actions.LoginWithGoogle">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action>
+
+	 	<action name="Logout" class="edu.uclm.esi.common.server.actions.Logout">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action> 
+
+		<action name="RecoverPwd" class="edu.uclm.esi.common.server.actions.RecoverPwd">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action> 
+		
+		
+		<action name="GetMensajes" class="edu.uclm.esi.common.server.actions.GetMensajes">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action> 
+	</package>
+	
+	<package name="games" namespace="/" extends="json-default">
+		<action name="GameList" class="com.maco.juegosEnGrupo.server.actions.GameList">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action>
+		
+		<action name="JoinGame" class="com.maco.juegosEnGrupo.server.actions.JoinGame">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action>
+		
+		<action name="GetBoard" class="com.maco.juegosEnGrupo.server.actions.GetBoard">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action>
+		<action name="SendMovement" class="com.maco.juegosEnGrupo.server.actions.SendMovement">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action>
+	</package>
+</struts>
+

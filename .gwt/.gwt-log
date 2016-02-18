@@ -1,0 +1,556 @@
+Public resources found in...
+Translatable source found in...
+Found 0 cached/archived units.  Used 0 / 2721 units from cache.
+Compiling...
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   90% complete (ETR: 0 seconds)
+   100% complete (ETR: 0 seconds)
+   Compilation completed in 6,01 seconds
+Removing invalidated units
+Finding entry point classes
+Rebinding com.google.gwt.i18n.client.impl.LocaleInfoImpl
+   Invoking generator com.google.gwt.i18n.rebind.LocaleInfoGenerator
+      Processing interface com.google.gwt.i18n.client.constants.NumberConstantsImpl
+         Generating method body for notANumber()
+         Generating method body for currencyPattern()
+         Generating method body for decimalPattern()
+         Generating method body for decimalSeparator()
+         Generating method body for defCurrencyCode()
+         Generating method body for exponentialSymbol()
+         Generating method body for globalCurrencyPattern()
+         Generating method body for groupingSeparator()
+         Generating method body for infinity()
+         Generating method body for minusSign()
+         Generating method body for monetaryGroupingSeparator()
+         Generating method body for monetarySeparator()
+         Generating method body for percent()
+         Generating method body for percentPattern()
+         Generating method body for perMill()
+         Generating method body for plusSign()
+         Generating method body for scientificPattern()
+         Generating method body for simpleCurrencyPattern()
+         Generating method body for zeroDigit()
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,03 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831247124.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831247124.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831247124_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831247931.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831247931.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831247931_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831310190.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831310190.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831310190_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831310244.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831310244.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831310244_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,02 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831321157.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831321157.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831321157_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831327115.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831327115.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831327115_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831334388.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831334388.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831334388_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831337641.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831337641.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831337641_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831339774.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831339774.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831339774_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831344641.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831344641.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831344641_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831363161.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831363161.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831363161_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831366249.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831366249.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831366249_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831375103.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831375103.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831375103_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831377855.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831377855.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831377855_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831382455.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831382455.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831382455_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831396841.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831396841.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831396841_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831398957.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831398957.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831398957_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831402973.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831402973.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831402973_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831416364.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831416364.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831416364_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,02 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831420490.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831420490.Template
+         Generating method body for html1()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831420490_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831424050.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831424050.Template
+         Generating method body for html1()
+         Generating method body for html2()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831424050_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831427473.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831427473.Template
+         Generating method body for html1()
+         Generating method body for html2()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831427473_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831431503.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831431503.Template
+         Generating method body for html1()
+         Generating method body for html2()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831431503_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831438819.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831438819.Template
+         Generating method body for html1()
+         Generating method body for html2()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831438819_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831443385.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831443385.Template
+         Generating method body for html1()
+         Generating method body for html2()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831443385_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831448303.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831448303.Template
+         Generating method body for html1()
+         Generating method body for html2()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831448303_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831455567.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831455567.Template
+         Generating method body for html1()
+         Generating method body for html2()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831455567_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion.FormIdentificacionUiBinder
+   Adding '3' new generated units
+      Compiling...
+         Compilation completed in 0,01 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831465710.Template
+   Invoking generator com.google.gwt.safehtml.rebind.SafeHtmlTemplatesGenerator
+      Constructing interface com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831465710.Template
+         Generating method body for html1()
+         Generating method body for html2()
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units
+Rebinding com.maco.juegosEnGrupo.gwt.client.FormIdentificacion_FormIdentificacionUiBinderImpl_designTime1418831465710_GenBundle
+   Adding '1' new generated units
+      Compiling...
+         Compilation completed in 0,00 seconds
+      Removing invalidated units

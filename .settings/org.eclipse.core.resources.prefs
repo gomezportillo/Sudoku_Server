@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//WebContent/getGame.jsp=UTF-8
+encoding//src/edu/uclm/esi/common/server/actions/EMailSenderService.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/actions/JSONAction.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/actions/Login.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/actions/LoginWithGoogle.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/actions/Logout.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/actions/RecoverPwd.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/actions/Register.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/persistence/Broker.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/persistence/DAOUser.java=UTF-8
