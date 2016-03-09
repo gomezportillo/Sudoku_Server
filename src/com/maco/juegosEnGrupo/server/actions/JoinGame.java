@@ -2,6 +2,7 @@ package com.maco.juegosEnGrupo.server.actions;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.opensymphony.xwork2.ActionContext;
 
@@ -53,6 +54,14 @@ public class JoinGame extends JSONAction {
 
 	@Override
 	public void setCommand(String cmd) {
+		JSONObject jso;
+		try {
+			jso = new JSONObject(cmd);
+			this.idUser=jso.getInt("idUser");
+			this.idGame=jso.getInt("idGame");
+		} catch (JSONException e) {
+			this.exception=e;
+		}
 	}
 	
 	public void setIdUser(int idUser) {

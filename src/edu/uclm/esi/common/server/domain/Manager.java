@@ -80,7 +80,8 @@ public class Manager {
 		ResultSet r=ps.executeQuery();
 		while (r.next()) {
 			Game g=new Game();
-			g.setId(r.getInt(1));
+			int r_id_game = r.getInt(1);
+			g.setId(r_id_game);
 			g.setName(r.getString(2));
 			g.setPlayersMin(r.getInt(3));
 			g.setPlayersMax(r.getInt(4));
