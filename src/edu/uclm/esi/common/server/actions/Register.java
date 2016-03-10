@@ -36,13 +36,13 @@ public class Register extends JSONAction {
 			super.addFieldError("pwd2", "Las passwords deben coincidir");
 		}
 		if (this.email==null || this.email.length()==0) {
-			super.addFieldError("email", "El email no puede estar vac??o");
+			super.addFieldError("email", "El email no puede estar vacío");
 		}
 		if (this.email!=null && this.email.length()>45) {
-			super.addFieldError("email", "El email no puede tener m??s de 45 caracteres");
+			super.addFieldError("email", "El email no puede tener más de 45 caracteres");
 		}
 		if (!ValidatorUtil.validateEmail(email))
-			super.addFieldError("email", "La direcci??n de email es inv??lida");
+			super.addFieldError("email", "La dirección de email es inválida");
 	}
 
 	@Override

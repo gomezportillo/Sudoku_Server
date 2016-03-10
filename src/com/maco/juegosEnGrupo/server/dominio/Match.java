@@ -6,6 +6,8 @@ import java.util.Vector;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.sudokus.dominio.Sudoku;
+
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.jsonMessages.OKMessage;
 import edu.uclm.esi.common.server.domain.User;
@@ -43,7 +45,9 @@ public abstract class Match {
 		if (game.getId()==1)
 			return new TresEnRaya(game);
 		if (game.getId()==2)
-			return null;
+			return null; //monopolly
+		if (game.getId()==3)
+			return new Sudoku(game); //TODO: crear la clase sudoku
 		return null;
 	}
 

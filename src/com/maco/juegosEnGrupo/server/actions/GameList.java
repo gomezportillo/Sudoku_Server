@@ -22,7 +22,7 @@ public class GameList extends JSONAction {
 	public String postExecute() {
 		try {
 			Manager manager=Manager.get();
-			this.gameList=manager.findAllGames();
+			this.gameList=manager.loadAllGames();
 			return SUCCESS;
 		} catch (Exception e) {
 			this.exception=e;
