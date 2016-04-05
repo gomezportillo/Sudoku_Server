@@ -19,16 +19,16 @@ import edu.uclm.esi.common.server.persistence.Broker;
 
 public class Manager {
 	private static Manager yo;
-	
+
 	private Hashtable<String, User> usersByEmail;
 	private Hashtable<Integer, User> usersById;
 	private Hashtable<Integer, Game> games;
-	
+
 	private Manager() {
 		this.usersByEmail=new Hashtable<String, User>();
 		this.usersById=new Hashtable<Integer, User>();
 		this.games=new Hashtable<Integer, Game>();
-		
+
 		try {
 			this.loadAllGames();
 		} catch (SQLException e) {
@@ -36,13 +36,13 @@ public class Manager {
 		}
 
 	}
-	
+
 	public static Manager get() {
 		if (yo==null)
 			yo=new Manager();
 		return yo;
 	}
-	
+
 	public void add(User user, String ip) throws IOException {
 		if (usersByEmail.get(user.getEmail())!=null) { 
 			usersByEmail.remove(user.getEmail());
@@ -51,16 +51,21 @@ public class Manager {
 		user.setIp(ip);
 		usersByEmail.put(user.getEmail(), user);
 		usersById.put(user.getId(), user);
+
+		this.announceLogin(user);
+	}	
+	
+	public void announceLogin(User user){
 		LoginMessageAnnouncement lm=new LoginMessageAnnouncement(user.getEmail());
 		//TODO: guardar mensajes con el que luego notificaremos la llegada de uno nuevo jugador
-		
+
 		Enumeration<User> usuariosConectados=this.usersByEmail.elements();
 		while(usuariosConectados.hasMoreElements()) {
 			User userConectado = usuariosConectados.nextElement();
 			userConectado.addMensajePendiente(lm);
 		}
 	}
-	
+
 	public User findUserByEmail(String email) {
 		return this.usersByEmail.get(email);
 	}
@@ -76,7 +81,7 @@ public class Manager {
 	public User findUserById(int id) {
 		return this.usersById.get(id);
 	}
-	
+
 	public Vector<Game> loadAllGames() throws SQLException {
 		Connection bd=Broker.get().getDBPrivilegiada();
 		Vector<Game> result=new Vector<Game>();
@@ -112,7 +117,7 @@ public class Manager {
 		g.add(pendingMatch);
 		return pendingMatch.hashCode();
 	}
-	
+
 	public Game findGameById(int id) {
 		return this.games.get(id);
 	}

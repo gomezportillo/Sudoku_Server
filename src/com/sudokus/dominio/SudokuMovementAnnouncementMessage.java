@@ -14,6 +14,7 @@ public class SudokuMovementAnnouncementMessage  extends JSONMessage{
     private int col;
     @JSONable
     private int value;
+    
 	
     public SudokuMovementAnnouncementMessage(int row, int col, int value) {
 		super(false);
