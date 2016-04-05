@@ -7,14 +7,15 @@ import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.jsonMessages.JSONable;
 
 public class SudokuMovementAnnouncementMessage  extends JSONMessage{
-	@JSONable
-	private String row;
-    @JSONable
-    private String col;
-    @JSONable
-    private String value;
 	
-    public SudokuMovementAnnouncementMessage(String row, String col, String value) {
+	@JSONable
+	private int row;
+    @JSONable
+    private int col;
+    @JSONable
+    private int value;
+	
+    public SudokuMovementAnnouncementMessage(int row, int col, int value) {
 		super(false);
 		this.setRow(row);
 		this.setCol(col);
@@ -22,20 +23,20 @@ public class SudokuMovementAnnouncementMessage  extends JSONMessage{
 	}
     
     public SudokuMovementAnnouncementMessage (JSONObject jso) throws JSONException {
-        this(jso.getString("row"), jso.getString("col"), jso.getString("value"));
+        this(jso.getInt("row"), jso.getInt("col"), jso.getInt("value"));
     }
     
-	public String getRow() { return row; }
+	public int getRow() { return row; }
 
-	public void setRow(String row) { this.row = row; }
+	public void setRow(int row) { this.row = row; }
 
-	public String getCol() { return col; }
+	public int getCol() { return col; }
 
-	public void setCol(String col) { this.col = col; }
+	public void setCol(int col) { this.col = col; }
 
-	public String getValue() { return value; }
+	public int getValue() { return value; }
 
-	public void setValue(String value) { this.value = value; }
+	public void setValue(int value) { this.value = value; }
 
 
 }

@@ -6,6 +6,7 @@ import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.jsonMessages.JSONable;
 
 public class SudokuWinnerMessage extends JSONMessage{
+	
 	@JSONable
 	private String winner;
 
