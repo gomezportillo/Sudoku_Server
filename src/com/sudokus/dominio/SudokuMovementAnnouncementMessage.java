@@ -37,7 +37,5 @@ public class SudokuMovementAnnouncementMessage  extends JSONMessage{
 
 	public void setValue(String value) { this.value = value; }
 
-	
-    
 
 }

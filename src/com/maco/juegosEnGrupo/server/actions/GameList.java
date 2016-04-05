@@ -24,6 +24,7 @@ public class GameList extends JSONAction {
 			Manager manager=Manager.get();
 			this.gameList=manager.loadAllGames();
 			return SUCCESS;
+			
 		} catch (Exception e) {
 			this.exception=e;
 			ActionContext.getContext().getSession().put("exception", e);
