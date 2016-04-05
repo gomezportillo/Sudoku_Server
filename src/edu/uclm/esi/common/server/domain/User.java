@@ -93,11 +93,14 @@ public class User {
 		return this.ip;
 	}
 
-	public void getMensajePendiente(JSONMessage jsm) {
-		this.mensajesPendientes.add(jsm);		
-	}
 
 	public Vector<JSONMessage> getMensajesPendientes() {
 		return this.mensajesPendientes;
+	}
+
+
+	public void addMensajePendiente(JSONMessage jsm) {
+		this.mensajesPendientes.add(jsm);
+		
 	}
 }

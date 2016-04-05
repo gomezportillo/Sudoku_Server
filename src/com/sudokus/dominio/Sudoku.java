@@ -1,16 +1,12 @@
 package com.sudokus.dominio;
 
 import java.io.IOException;
-import java.util.Random;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.maco.juegosEnGrupo.server.dominio.Game;
 import com.maco.juegosEnGrupo.server.dominio.Match;
-import com.maco.tresenraya.jsonMessages.TresEnRayaBoardMessage;
-import com.maco.tresenraya.jsonMessages.TresEnRayaMovement;
-import com.maco.tresenraya.jsonMessages.TresEnRayaWaitingMessage;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
@@ -26,39 +22,31 @@ public class Sudoku extends Match {
 	}
 
 	private String generateRandomSudoku() {
-		//TODO: cargar el fichero sudokus.txt y elegir uno al azar
+		//TODO: cargar uno de los fichero sudokuXX.txt al azar
 		return "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
 	}
 
 	@Override
 	protected void postAddUser(User user) {
 		if (this.players.size()==2) {
-
-			//TODO: notificar a ambos jugadores que la partida esta lista
-
 			try {
-				JSONMessage jsBoard=new TresEnRayaBoardMessage(this.toString());
-				//TODO: enviar tablero a los dos jugadores
+				User a = this.players.get(0);
+				User b = this.players.get(1);
+				
+				//
+				JSONMessage jsBoardA =new SudokuBoardMessage(this.casillas, a.getEmail(), b.getEmail(), this.hashCode());
+				a.addMensajePendiente(jsBoardA);
+				
+				JSONMessage jsBoardB =new SudokuBoardMessage(this.casillas, b.getEmail(), a.getEmail(), this.hashCode());
+				b.addMensajePendiente(jsBoardB);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else {
-			//JSONMessage jsm=new SudokuWaitingMessage("Waiting for one more player");
-			//TODO: notificar espera
-		}
+		} 
 	}
 
 
-	@Override
-	public String toString() {
-		String r = casillas;
-		r+="#" + this.players.get(0).getEmail() + "#";
-
-		if (this.players.size()==2) {
-			r+=this.players.get(1).getEmail() + "#";
-		}
-		return r;
-	}
 
 	@Override
 	protected void postMove(User user, JSONObject jsoMovement) throws Exception {
@@ -68,12 +56,18 @@ public class Sudoku extends Match {
 
 	@Override
 	protected void updateBoard(int row, int col, JSONMessage result) throws JSONException, IOException {
-		//TODO: actualizar el teclado con los nuevos datos
+		//TODO: actualizar el teclado con los nuevos datos e informar al contrincante del cambio
 	}
 
 	@Override
-	protected boolean isTheTurnOf(User user) { // este metodo no se usa en los sudokus
+	protected boolean isTheTurnOf(User user) { //este metodo no se usa en los sudokus (ergo siempre es el turno de user)
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

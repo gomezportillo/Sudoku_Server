@@ -16,7 +16,5 @@ public class ErrorMessage extends JSONMessage {
 		this(jso.get("text").toString());
 	}
 	
-	public String getText() {
-		return text;
-	}
+	public String getText() { return text; }
 }

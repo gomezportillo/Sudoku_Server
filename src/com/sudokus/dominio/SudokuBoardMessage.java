@@ -9,7 +9,9 @@ public class SudokuBoardMessage extends JSONMessage{
     @JSONable
     private String board;
     @JSONable
-    private String user1, user2;
+    private String user1;
+    @JSONable
+    private String user2;
     @JSONable
     private int idMatch;
 
@@ -20,6 +22,7 @@ public class SudokuBoardMessage extends JSONMessage{
         this.user2 =user2;
         this.idMatch=idMatch;
     }
+    
     public SudokuBoardMessage (JSONObject jso) throws JSONException {
         this(jso.getString("board"), jso.getString("user1"), jso.getString("user2"), jso.getInt("idMatch"));
     }

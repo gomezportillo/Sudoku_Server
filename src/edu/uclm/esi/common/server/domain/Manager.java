@@ -57,8 +57,7 @@ public class Manager {
 		Enumeration<User> usuariosConectados=this.usersByEmail.elements();
 		while(usuariosConectados.hasMoreElements()) {
 			User userConectado = usuariosConectados.nextElement();
-			MensajePendiente mp = new MensajePendiente(userConectado, lm);
-			userConectado.getMensajePendiente(lm);
+			userConectado.addMensajePendiente(lm);
 		}
 	}
 	

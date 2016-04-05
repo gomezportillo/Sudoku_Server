@@ -32,6 +32,7 @@ public class SendMovement extends JSONAction {
 			Match match=g.findMatchById(idMatch, idUser);
 			match.move(user, this.jsoMovement);
 			return SUCCESS;
+			
 		} catch (Exception e) {
 			this.exception=e;
 			ActionContext.getContext().getSession().put("exception", e);
