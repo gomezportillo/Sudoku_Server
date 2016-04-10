@@ -3,7 +3,6 @@ package edu.uclm.esi.common.jsonMessages;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.maco.tresenraya.jsonMessages.GameListMessage;
 import com.maco.tresenraya.jsonMessages.TresEnRayaBoardMessage;
 import com.maco.tresenraya.jsonMessages.TresEnRayaWaitingMessage;
 

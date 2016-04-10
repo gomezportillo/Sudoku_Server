@@ -34,7 +34,6 @@ public class Manager {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	public static Manager get() {
@@ -54,10 +53,11 @@ public class Manager {
 
 		this.announceLogin(user);
 	}	
-	
-	public void announceLogin(User user){
-		LoginMessageAnnouncement lm=new LoginMessageAnnouncement(user.getEmail());
-		//TODO: guardar mensajes con el que luego notificaremos la llegada de uno nuevo jugador
+
+	public void announceLogin(User new_user){
+		LoginMessageAnnouncement lm = new LoginMessageAnnouncement(new_user.getEmail());
+
+		//guardamos mensajes con el que luego notificaremos la llegada de uno nuevo jugador
 
 		Enumeration<User> usuariosConectados=this.usersByEmail.elements();
 		while(usuariosConectados.hasMoreElements()) {
@@ -87,6 +87,7 @@ public class Manager {
 		Vector<Game> result=new Vector<Game>();
 		String sql="Select id, name, playersMin, playersMax from Game order by name";
 		PreparedStatement ps=bd.prepareStatement(sql);
+		
 		ResultSet r=ps.executeQuery();
 		while (r.next()) {
 			Game g=new Game();
@@ -100,6 +101,7 @@ public class Manager {
 				this.games.put(g.getId(), g);
 		}
 		ps.close();
+		
 		return result;
 	}
 
@@ -107,6 +109,7 @@ public class Manager {
 		Game g=this.games.get(idGame);
 		if (g==null)
 			throw new Exception("Unknown game");
+		
 		User user=this.findUserById(idUser);
 		g.add(user);
 		Match pendingMatch=g.findPendingMatch();
@@ -115,6 +118,7 @@ public class Manager {
 		}
 		pendingMatch.add(user);
 		g.add(pendingMatch);
+		
 		return pendingMatch.hashCode();
 	}
 

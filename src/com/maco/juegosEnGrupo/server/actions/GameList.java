@@ -6,10 +6,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import com.maco.juegosEnGrupo.server.dominio.Game;
-import com.maco.tresenraya.jsonMessages.GameListMessage;
 import com.opensymphony.xwork2.ActionContext;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
+import edu.uclm.esi.common.jsonMessages.GameListMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.server.actions.JSONAction;
 import edu.uclm.esi.common.server.domain.Manager;
@@ -37,6 +37,7 @@ public class GameList extends JSONAction {
 		JSONMessage result;
 		if (this.exception!=null) {
 			result=new ErrorMessage(this.exception.getMessage());
+			
 		} else {
 			JSONArray games=new JSONArray();			
 			for (Game g : this.gameList) {
@@ -48,8 +49,8 @@ public class GameList extends JSONAction {
 			}
 			result=new GameListMessage(games);
 		}
-		String s=result.toString();
-		return s;
+		
+		return result.toString();
 	}
 
 	@Override

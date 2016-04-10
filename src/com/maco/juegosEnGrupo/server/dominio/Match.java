@@ -6,6 +6,7 @@ import java.util.Vector;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.maco.tresenraya.jsonMessages.TresEnRaya;
 import com.sudokus.dominio.Sudoku;
 
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
@@ -31,8 +32,8 @@ public abstract class Match {
 		this.players.add(user);
 		postAddUser(user);
 	}
-
-	protected abstract void postAddUser(User user);
+	
+	protected abstract void postAddUser(User user) throws Exception;
 
 	public boolean isPlaying(int idUser) {
 		for (User player : players)
@@ -57,11 +58,11 @@ public abstract class Match {
 	public void move(User user, JSONObject jsoMovement) throws Exception {
 		if (!isTheTurnOf(user))
 			throw new Exception("It's not your turn");
+		
 		postMove(user, jsoMovement);
 	}
-
-	protected abstract boolean isTheTurnOf(User user);
 	protected abstract void postMove(User user, JSONObject jsoMovement) throws Exception;
-
+	
+	protected abstract boolean isTheTurnOf(User user);
 	protected abstract void updateBoard(int row, int col, JSONMessage result) throws JSONException, IOException;
 }

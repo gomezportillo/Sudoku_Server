@@ -1,4 +1,4 @@
-package com.maco.juegosEnGrupo.server.dominio;
+package com.maco.tresenraya.jsonMessages;
 
 import java.io.IOException;
 import java.util.Random;
@@ -6,10 +6,8 @@ import java.util.Random;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.maco.tresenraya.jsonMessages.TresEnRayaBoardMessage;
-import com.maco.tresenraya.jsonMessages.TresEnRayaMatchReadyMessage;
-import com.maco.tresenraya.jsonMessages.TresEnRayaMovement;
-import com.maco.tresenraya.jsonMessages.TresEnRayaWaitingMessage;
+import com.maco.juegosEnGrupo.server.dominio.Game;
+import com.maco.juegosEnGrupo.server.dominio.Match;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
