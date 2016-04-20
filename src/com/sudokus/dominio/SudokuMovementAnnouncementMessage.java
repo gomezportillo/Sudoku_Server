@@ -12,15 +12,18 @@ public class SudokuMovementAnnouncementMessage  extends JSONMessage{
 	private int row;
     @JSONable
     private int col;
-	
-    public SudokuMovementAnnouncementMessage(int row, int col) {
+    @JSONable
+    private int idMatch;
+    	
+    public SudokuMovementAnnouncementMessage(int row, int col, int idMatch) {
 		super(false);
 		this.setRow(row);
-		this.setCol(col);		
+		this.setCol(col);
+		this.idMatch = idMatch;
 	}
     
     public SudokuMovementAnnouncementMessage (JSONObject jso) throws JSONException {
-        this(jso.getInt("row"), jso.getInt("col"));
+        this(jso.getInt("row"), jso.getInt("col"), jso.getInt("idMatch"));
     }
     
 	public int getRow() { return row; }

@@ -58,7 +58,7 @@ public class Sudoku extends Match {
 		int col = jsoMovement.getInt("col");
 		SudokuMovementAnnouncementMessage msg = new SudokuMovementAnnouncementMessage(row, col);
 
-		user.addMensajePendiente(msg);
+		user.addMensajePendiente(msg); //es a este usuario o al otro?
 	}
 
 	@Override
@@ -127,7 +127,6 @@ public class Sudoku extends Match {
 	}
 
 
-
 	//http://codereview.stackexchange.com/questions/46033/sudoku-checker-in-java
 	private boolean comprobarTableroResuelto(String tableroPlayer12) {
 		int [][] tablero = convertirTableroAIntVector(tableroPlayer12);
@@ -159,8 +158,8 @@ public class Sudoku extends Match {
 	}
 
 	private int[][] convertirTableroAIntVector(String tableroString){
-		int [][] tableroInt = null;		
-		int factor = 0;
+		int [][] tableroInt = new int[8][8];		
+		int factor;
 
 		for (int i=0; i<9; i++) {
 			factor = 9*i;

@@ -52,8 +52,7 @@ public class GetBoard extends JSONAction {
 	}
 
 	@Override
-	public void setCommand(String cmd) {
-	}
+	public void setCommand(String cmd) {}
 
 	public void setIdUser(int idUser) {
 		this.idUser = idUser;
