@@ -7,6 +7,7 @@ import org.json.JSONObject;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
+import edu.uclm.esi.common.jsonMessages.MessageList;
 import edu.uclm.esi.common.server.domain.Manager;
 
 public class GetMensajes extends JSONAction{
@@ -36,11 +37,12 @@ public class GetMensajes extends JSONAction{
 			resultado = new ErrorMessage(this.exception.getMessage());
 			return resultado.toString(); 
 		} else{
-			JSONArray jsaMensajes = new JSONArray();
+			MessageList ml = new MessageList();
 			for (JSONMessage mensaje : this.mensajes) {
-				jsaMensajes.put(mensaje.toJSONObject());
+				ml.add(mensaje.toJSONObject());
 			}
-			return jsaMensajes.toString();
+			//por aqui hay que limpiar los mensajes que tiene el jugador cuando los mandamos
+			return ml.toString();
 		}
 	}
 }

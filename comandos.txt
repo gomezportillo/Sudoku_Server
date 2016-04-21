@@ -9,3 +9,9 @@ localhost:8080/JuegosEnGrupo/Login.action?command={email : "pedroma2@uclm.es", p
 localhost:8080/JuegosEnGrupo/GetMensajes.action?command={email: "pedroma@uclm.es"}
 
 localhost:8080/JuegosEnGrupo/JoinGame.action?command={idUser:137, idGame: 3}
+
+localhost:8080/JuegosEnGrupo/JoinGame.action?command={idUser:131, idGame: 3}
+
+*********
+localhost:8080/JuegosEnGrupo/Login.action?command={email : "pedroma@uclm.es", pwd : "1234", userType : "User2016"}
+localhost:8080/JuegosEnGrupo/JoinGame.action?command={idUser:137, idGame: 3}

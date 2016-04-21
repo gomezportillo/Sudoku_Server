@@ -16,11 +16,27 @@ public class SudokuMovementMessage  extends JSONMessage{
     private int value;
     @JSONable
     private int idUser;
-    @JSONable
+    public int getIdUser() {
+		return idUser;
+	}
+
+	public void setIdUser(int idUser) {
+		this.idUser = idUser;
+	}
+
+	@JSONable
     private int idMatch;
     
 	
-    public SudokuMovementMessage(int row, int col, int value, int idUser, int idMatch) {
+    public int getIdMatch() {
+		return idMatch;
+	}
+
+	public void setIdMatch(int idMatch) {
+		this.idMatch = idMatch;
+	}
+
+	public SudokuMovementMessage(int row, int col, int value, int idUser, int idMatch) {
 		super(false);
 		this.setRow(row);
 		this.setCol(col);

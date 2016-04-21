@@ -19,6 +19,9 @@ public class User {
 	private String ip;
 	private String userType;
 	private Vector<JSONMessage> mensajesPendientes;
+	
+	private String tablero; 
+
 
 	public User() {
 		this.mensajesPendientes = new Vector<JSONMessage>();
@@ -98,6 +101,14 @@ public class User {
 		return this.mensajesPendientes;
 	}
 
+	public String getTablero() {
+		return tablero;
+	}
+
+
+	public void setTablero(String tablero) {
+		this.tablero = tablero;
+	}
 
 	public void addMensajePendiente(JSONMessage jsm) {
 		this.mensajesPendientes.add(jsm);

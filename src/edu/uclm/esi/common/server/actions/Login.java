@@ -18,7 +18,8 @@ import edu.uclm.esi.common.server.domain.User;
 public class Login extends JSONAction {
 	private String email;
 	private String pwd;
-	private User user;	private String userType;
+	private User user;	
+	private String userType;
 	
 	protected String postExecute() {
 		try {
