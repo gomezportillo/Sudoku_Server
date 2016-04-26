@@ -101,6 +101,7 @@ public class User {
 		return this.mensajesPendientes;
 	}
 
+		
 	public String getTablero() {
 		return tablero;
 	}
@@ -113,5 +114,9 @@ public class User {
 	public void addMensajePendiente(JSONMessage jsm) {
 		this.mensajesPendientes.add(jsm);
 		
+	}
+
+	public void borrarMensajesPendientes() {
+		this.mensajesPendientes = new Vector<JSONMessage>();
 	}
 }

@@ -17,18 +17,14 @@ public class Sudoku extends Match {
 	private String casillas;
 	private String casillasSolucion;
 
-
-	//TODO primo : para ver si el sudoku esta resuelto comparar el strigng con la solucion con el tablero del user
-
 	public Sudoku(Game game) {
 		super(game);
-		this.setCasillas(generateRandomSudoku());
+		generateRandomSudoku();
 	}
 
-	private String generateRandomSudoku() {
-		//TODO: cargar uno de los fichero sudokuXX.txt al azar (prioridad 0)
+	private void generateRandomSudoku() {
 		this.casillasSolucion = "483921657967345821251876493548132976729564138136798245372689514814253769695417382";
-		return "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
+		this.casillas = "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
 
 	}
 
@@ -54,16 +50,18 @@ public class Sudoku extends Match {
 
 	@Override
 	protected void postMove(User user, JSONObject jsoMovement) throws Exception {
-		//TODO: informar al otro usuario de que el contrincante ha movido y actualiza el tablero
+		//informa al otro usuario de que el contrincante ha movido y actualiza el tablero
 
 		int row = jsoMovement.getInt("row");
 		int col = jsoMovement.getInt("col");
 		int idMatch = jsoMovement.getInt("idMatch");
+		int idUser = jsoMovement.getInt("idUser");
+		int value = jsoMovement.getInt("value");
 		
 		SudokuMovementAnnouncementMessage msg = new SudokuMovementAnnouncementMessage(row, col, idMatch);
 		this.getOppositetUser(user).addMensajePendiente(msg);
 		
-		SudokuMovementMessage mov = null; //(SudokuMovementMessage) jsoMovement; //TODO TODO TODO TODO
+		SudokuMovementMessage mov = new SudokuMovementMessage(row, col, value, idUser, idMatch);
 		
 		updateBoard(row, col, mov);
 	}
@@ -77,13 +75,25 @@ public class Sudoku extends Match {
 
 		this.updateTableroPlayer(player, mov.getCol(), mov.getCol(), mov.getValue());
 
-		if (checkWinnerTablero(player) == true) { //tenemos ganador (mandamos el winnermessage)
+		if (checkWinnerTablero(player) == true) { //tenemos ganador; mandamos el winnermessage a ambos jugadores
 			SudokuWinnerMessage swm = new SudokuWinnerMessage(player.getEmail());
 			this.players.get(0).addMensajePendiente(swm);
 			this.players.get(1).addMensajePendiente(swm);
 		}
 	}
 
+	private void updateTableroPlayer(User player, int row, int column, int value){
+
+		String tablero = player.getTablero();
+		
+		int index = row*column-1;
+		String substring1 = tablero.substring(0, index-1);
+		String substring2 = tablero.substring(index, this.casillas.length()-1);
+		String newValue = String.valueOf(value);
+
+		player.setTablero(substring1 + newValue + substring2);
+	}
+	
 	private boolean checkWinnerTablero(User player) {
 		return this.casillasSolucion.equals(player.getTablero());
 	}
@@ -103,7 +113,7 @@ public class Sudoku extends Match {
 	}
 
 	@Override
-	protected boolean isTheTurnOf(User user) { //este metodo no se usa en los sudokus (pq siempre es el turno de user)
+	protected boolean isTheTurnOf(User user) { //esta funcion no se usa en los sudokus (pq siempre es el turno de user)
 		return true;
 	}
 
@@ -119,18 +129,6 @@ public class Sudoku extends Match {
 		this.casillas = casillas;
 		this.players.get(0).setTablero(casillas);
 		this.players.get(1).setTablero(casillas);
-	}
-
-	private void updateTableroPlayer(User player, int row, int column, int value){
-
-		String tablero = player.getTablero();
-		
-		int index = row*column-1;
-		String substring1 = tablero.substring(0, index-1);
-		String substring2 = tablero.substring(index, this.casillas.length()-1);
-		String newValue = String.valueOf(value);
-
-		player.setTablero(substring1 + newValue + substring2);
 	}
 	
 	public String getCasillas() { return casillas; }

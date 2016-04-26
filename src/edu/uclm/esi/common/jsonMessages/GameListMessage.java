@@ -27,7 +27,6 @@ public class GameListMessage extends JSONMessage {
 			result.put("games", games);
 			result.put("type", getType());
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return result.toString();

@@ -48,7 +48,7 @@ public abstract class Match {
 		if (game.getId()==2)
 			return null; //monopolly
 		if (game.getId()==3)
-			return new Sudoku(game); //TODO: crear la clase sudoku
+			return new Sudoku(game);
 		return null;
 	}
 

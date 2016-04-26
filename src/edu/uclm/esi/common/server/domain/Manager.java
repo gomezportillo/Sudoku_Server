@@ -91,7 +91,7 @@ public class Manager {
 		ResultSet r=ps.executeQuery();
 		while (r.next()) {
 			Game g=new Game();
-			int r_id_game = r.getInt(1); //TODO salta el unknown game exception de abajo pq no encuentra el game (y no llega a esta parte)
+			int r_id_game = r.getInt(1);
 			g.setId(r_id_game);
 			g.setName(r.getString(2));
 			g.setPlayersMin(r.getInt(3));
@@ -128,6 +128,9 @@ public class Manager {
 
 	public Vector<JSONMessage> getMensajesPendientes(String email) {
 		User user = this.usersByEmail.get(email);
-		return user.getMensajesPendientes();
+		Vector<JSONMessage> v = user.getMensajesPendientes(); //TODO no se si al borrarlo abajo se borrará esto tb por referencia
+		user.borrarMensajesPendientes();
+		
+		return v;
 	}
 }
