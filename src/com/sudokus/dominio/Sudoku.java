@@ -25,7 +25,6 @@ public class Sudoku extends Match {
 	private void generateRandomSudoku() {
 		this.casillasSolucion = "483921657967345821251876493548132976729564138136798245372689514814253769695417382";
 		this.casillas = "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
-
 	}
 
 	@Override
@@ -46,7 +45,6 @@ public class Sudoku extends Match {
 			}
 		} 
 	}
-
 
 	@Override
 	protected void postMove(User user, JSONObject jsoMovement) throws Exception {

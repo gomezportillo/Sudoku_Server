@@ -128,7 +128,7 @@ public class Manager {
 
 	public Vector<JSONMessage> getMensajesPendientes(String email) {
 		User user = this.usersByEmail.get(email);
-		Vector<JSONMessage> v = user.getMensajesPendientes(); //TODO no se si al borrarlo abajo se borrará esto tb por referencia
+		Vector<JSONMessage> v = user.getMensajesPendientes();
 		user.borrarMensajesPendientes();
 		
 		return v;

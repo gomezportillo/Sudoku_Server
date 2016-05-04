@@ -37,7 +37,7 @@ public class SudokuMovementMessage  extends JSONMessage{
 	}
 
 	public SudokuMovementMessage(int row, int col, int value, int idUser, int idMatch) {
-		super(false);
+		super(true);
 		this.setRow(row);
 		this.setCol(col);
 		this.setValue(value);
