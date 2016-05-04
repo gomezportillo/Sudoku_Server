@@ -24,13 +24,15 @@ public class Sudoku extends Match {
 
 	private void generateRandomSudoku() {
 		this.casillasSolucion = "483921657967345821251876493548132976729564138136798245372689514814253769695417382";
-		this.casillas = "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
+		this.casillas="003020600900305001001806400008102900700000008006708200002609500800203009005010300";
 	}
 
 	@Override
 	protected void postAddUser(User user) {
 		if (this.players.size()==2) {
 			try {
+				this.setTableroDeJugadores();
+				
 				User a = this.players.get(0);
 				User b = this.players.get(1);
 
@@ -84,9 +86,9 @@ public class Sudoku extends Match {
 
 		String tablero = player.getTablero();
 		
-		int index = row*column-1;
-		String substring1 = tablero.substring(0, index-1);
-		String substring2 = tablero.substring(index, this.casillas.length()-1);
+		int index = row*column+column;
+		String substring1 = tablero.substring(0, index);
+		String substring2 = tablero.substring(index+1, this.casillas.length()-1);
 		String newValue = String.valueOf(value);
 
 		player.setTablero(substring1 + newValue + substring2);
@@ -123,8 +125,8 @@ public class Sudoku extends Match {
 		return "Partida de Sudoku: " + player1 + " VS. " + player2;
 	}
 
-	public void setCasillas(String casillas) { 
-		this.casillas = casillas;
+	public void setTableroDeJugadores() { 
+		String casillas = "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
 		this.players.get(0).setTablero(casillas);
 		this.players.get(1).setTablero(casillas);
 	}

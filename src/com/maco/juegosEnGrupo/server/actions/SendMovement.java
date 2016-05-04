@@ -55,7 +55,7 @@ public class SendMovement extends JSONAction {
 		try {
 			this.jsoMovement = new JSONObject(cmd);
 			this.idUser= jsoMovement.getInt("idUser");
-			this.idGame = 3;
+			this.idGame = jsoMovement.getInt("idGame"); //3
 			this.idMatch = jsoMovement.getInt("idMatch");
 		} catch (JSONException e) {
 			this.exception=e;
