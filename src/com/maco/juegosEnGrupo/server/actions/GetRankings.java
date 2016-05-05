@@ -1,30 +1,31 @@
 package com.maco.juegosEnGrupo.server.actions;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.sudokus.dominio.Sudoku;
 import com.sudokus.dominio.SudokuRankingMessage;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
-import edu.uclm.esi.common.jsonMessages.OKMessage;
 import edu.uclm.esi.common.server.actions.JSONAction;
-import edu.uclm.esi.common.server.domain.Manager;
-import edu.uclm.esi.common.server.domain.User;
 
 @SuppressWarnings("serial")
 public class GetRankings extends JSONAction {
 	private int idGame;
 	private String rankings;
-	
+
 	@Override
 	public String postExecute() {
 		try {
 			//Manager manager=Manager.get();
 			//User user=manager.findUserById(this.idUser);
-			this.rankings = "Que pasa primo, es que quieres ver los rankings?";
+			if (this.idGame == Sudoku.SUDOKU) 
+				this.rankings = "No te preocupes por los rankins, ya te digo yo que no vas ganando";
+			else
+				this.rankings = "Aun no guardamos rankings de este tipo de juego";
+
 			return SUCCESS;
 		} catch (Exception e) {
 			this.exception=e;
@@ -40,11 +41,6 @@ public class GetRankings extends JSONAction {
 			srm=new ErrorMessage(this.exception.getMessage());
 		else {
 			srm = new SudokuRankingMessage(this.rankings);
-			/**try {
-				jsa.put(0, idMatch);
-			} catch (JSONException e) {
-				e.printStackTrace();
-			}*/
 		}
 		return srm.toJSONObject().toString();
 	}
