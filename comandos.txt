@@ -2,15 +2,19 @@ localhost:8080/JuegosEnGrupo/Register.action?command={email : "pedroma@uclm.es",
 
 localhost:8080/JuegosEnGrupo/Register.action?command={email : "pedroma2@uclm.es", pwd1 : "1234", pwd2 : "1234"}
 
+
 localhost:8080/JuegosEnGrupo/Login.action?command={email : "pedroma@uclm.es", pwd : "1234", userType : "User2016"}
 
 localhost:8080/JuegosEnGrupo/Login.action?command={email : "pedroma2@uclm.es", pwd : "1234", userType : "2016"}
 
-localhost:8080/JuegosEnGrupo/GetMensajes.action?command={email: "pedroma@uclm.es"}
 
 localhost:8080/JuegosEnGrupo/JoinGame.action?command={idUser:137, idGame: 3}
 
 localhost:8080/JuegosEnGrupo/JoinGame.action?command={idUser:227, idGame: 3}
+
+
+localhost:8080/JuegosEnGrupo/GetMensajes.action?command={email: "pedroma@uclm.es"}
+
 
 http://localhost:8080/JuegosEnGrupo/SendMovement.action?command={value:1,idUser:137,idMatch:558821866,idGame:3,row:5,col:5}
 

@@ -16,15 +16,22 @@ public class Sudoku extends Match {
 	public static int SUDOKU = 3;
 	private String casillas;
 	private String casillasSolucion;
+	private double startingTime;
 
 	public Sudoku(Game game) {
 		super(game);
 		generateRandomSudoku();
+		this.setStartingTime(System.currentTimeMillis());
+	}
+
+	private void setStartingTime(long currentTime) {
+		this.startingTime = currentTime; 
 	}
 
 	private void generateRandomSudoku() {
+		String tablero_bueno = "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
 		this.casillasSolucion = "483921657967345821251876493548132976729564138136798245372689514814253769695417382";
-		this.casillas="003020600900305001001806400008102900700000008006708200002609500800203009005010300";
+		this.casillas = "483921657967345821251870493548132976729564138136798245372689514014253769695417382";
 	}
 
 	@Override
@@ -73,10 +80,11 @@ public class Sudoku extends Match {
 		
 		User player = getUser(mov.getIdUser());
 
-		this.updateTableroPlayer(player, mov.getCol(), mov.getCol(), mov.getValue());
+		this.updateTableroPlayer(player, mov.getRow(), mov.getCol(), mov.getValue());
 
 		if (checkWinnerTablero(player) == true) { //tenemos ganador; mandamos el winnermessage a ambos jugadores
-			SudokuWinnerMessage swm = new SudokuWinnerMessage(player.getEmail());
+			double finishTime = (System.currentTimeMillis() - this.startingTime) / 1000;
+			SudokuWinnerMessage swm = new SudokuWinnerMessage(player.getEmail(), finishTime);
 			this.players.get(0).addMensajePendiente(swm);
 			this.players.get(1).addMensajePendiente(swm);
 		}
@@ -86,9 +94,9 @@ public class Sudoku extends Match {
 
 		String tablero = player.getTablero();
 		
-		int index = row*column+column;
+		int index = column+(9*row);
 		String substring1 = tablero.substring(0, index);
-		String substring2 = tablero.substring(index+1, this.casillas.length()-1);
+		String substring2 = tablero.substring(index+1, this.casillas.length());
 		String newValue = String.valueOf(value);
 
 		player.setTablero(substring1 + newValue + substring2);
@@ -126,7 +134,7 @@ public class Sudoku extends Match {
 	}
 
 	public void setTableroDeJugadores() { 
-		String casillas = "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
+		String casillas = "483921657967345821251870493548132976729564138136798245372689514014253769695417382";
 		this.players.get(0).setTablero(casillas);
 		this.players.get(1).setTablero(casillas);
 	}
