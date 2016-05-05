@@ -66,6 +66,11 @@
 			<result name="error" type="json"/>
 		</action>
 		
+		<action name="GetRankings" class="com.maco.juegosEnGrupo.server.actions.GetRankings">
+			<result name="success" type="json"/>
+			<result name="error" type="json"/>
+		</action>
+		
 		<action name="GetBoard" class="com.maco.juegosEnGrupo.server.actions.GetBoard">
 			<result name="success" type="json"/>
 			<result name="error" type="json"/>
@@ -76,4 +81,3 @@
 		</action>
 	</package>
 </struts>
-

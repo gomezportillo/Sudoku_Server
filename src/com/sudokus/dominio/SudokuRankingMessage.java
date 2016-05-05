@@ -5,16 +5,16 @@ import org.json.JSONObject;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.jsonMessages.JSONable;
 
-public class SudokuRankingResponseMessage extends JSONMessage{
+public class SudokuRankingMessage extends JSONMessage{
 	@JSONable
 	String rankings;
 
-	public SudokuRankingResponseMessage(String r) {
+	public SudokuRankingMessage(String r) {
 		super(false);
 		this.rankings = r;
 	}
 
-	public SudokuRankingResponseMessage (JSONObject jso) throws JSONException {
+	public SudokuRankingMessage (JSONObject jso) throws JSONException {
 		this(jso.getString("rankings"));
 	}
 

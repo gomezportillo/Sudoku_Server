@@ -5,6 +5,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.sudokus.dominio.SudokuRankingMessage;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
@@ -15,16 +16,15 @@ import edu.uclm.esi.common.server.domain.User;
 
 @SuppressWarnings("serial")
 public class GetRankings extends JSONAction {
-	private int idUser;
 	private int idGame;
+	private String rankings;
 	
 	@Override
 	public String postExecute() {
 		try {
-			Manager manager=Manager.get();
-			User user=manager.findUserById(this.idUser);
-			if (user==null)
-				throw new Exception("Usuario no autenticado");
+			//Manager manager=Manager.get();
+			//User user=manager.findUserById(this.idUser);
+			this.rankings = "Que pasa primo, es que quieres ver los rankings?";
 			return SUCCESS;
 		} catch (Exception e) {
 			this.exception=e;
@@ -35,19 +35,18 @@ public class GetRankings extends JSONAction {
 
 	@Override
 	public String getResultado() {
-		JSONMessage jso;
+		JSONMessage srm;
 		if (this.exception!=null)
-			jso=new ErrorMessage(this.exception.getMessage());
+			srm=new ErrorMessage(this.exception.getMessage());
 		else {
-			JSONArray jsa=new JSONArray();
+			srm = new SudokuRankingMessage(this.rankings);
 			/**try {
 				jsa.put(0, idMatch);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}*/
-			jso=new OKMessage(jsa);
 		}
-		return jso.toJSONObject().toString();
+		return srm.toJSONObject().toString();
 	}
 
 	@Override
@@ -55,17 +54,12 @@ public class GetRankings extends JSONAction {
 		JSONObject jso;
 		try {
 			jso = new JSONObject(cmd);
-			this.idUser=jso.getInt("idUser");
 			this.idGame=jso.getInt("idGame");
 		} catch (JSONException e) {
 			this.exception=e;
 		}
 	}
-	
-	public void setIdUser(int idUser) {
-		this.idUser=idUser;
-	}
-	
+
 	public void setIdGame(int idGame) {
 		this.idGame = idGame;
 	}
