@@ -2,7 +2,6 @@
     <wb-module deploy-name="JuegosEnGrupo">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src_android"/>
         <property name="context-root" value="JuegosEnGrupo"/>
         <property name="java-output-path" value="/JuegosEnGrupo/build/classes"/>
     </wb-module>

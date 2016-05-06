@@ -1,6 +1,14 @@
 servidor
 - mensaje -1-1 echar de la partida
+	* informar al contrincate de que ha ganado
+	* terminar la partida y
+	* actualizar la bbdd con la victoria de este jugador  
+
 - guardar rankings
+	* crear broker
+	* crear EDA donde cargar el fichero (hashtable?)
+	* actualilzar esa EDa con una victoria
+	* hacer persistente la EDA guardando en el fichero
 
 - ultima conexion a jugadores
 - robot

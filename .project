@@ -33,11 +33,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>src_android</name>
-			<type>2</type>
-			<location>/Users/Maco/Documents/workspaceADT/TresEnRaya/src</location>
-		</link>
-	</linkedResources>
 </projectDescription>

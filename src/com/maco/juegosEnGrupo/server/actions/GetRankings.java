@@ -10,6 +10,7 @@ import com.sudokus.dominio.SudokuRankingMessage;
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.server.actions.JSONAction;
+import edu.uclm.esi.common.server.persistence.BrokerRankings;
 
 @SuppressWarnings("serial")
 public class GetRankings extends JSONAction {
@@ -35,7 +36,8 @@ public class GetRankings extends JSONAction {
 	}
 
 	private String getSudokuRankings() {
-		return "Macario - 100000;Pedroma - 20;Lemus - 1";
+		BrokerRankings br = BrokerRankings.get();
+		return br.getRankings();
 	}
 
 	@Override
