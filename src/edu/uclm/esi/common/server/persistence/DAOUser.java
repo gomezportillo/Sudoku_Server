@@ -12,7 +12,7 @@ import edu.uclm.esi.common.server.domain.User;
 public class DAOUser {
 	
 	public static void registrar(String email, String pwd) throws SQLException {
-		Connection bd=Broker.get().getDBPrivilegiada();
+		Connection bd=BrokerAlarcos.get().getDBPrivilegiada();
 		try {
 			String sql="{call insertarUsuario (?, ?, ?, ?, ?)}";
 			CallableStatement cs=bd.prepareCall(sql);
@@ -38,16 +38,16 @@ public class DAOUser {
 	}
 
 	public static Connection identificar(String email, String pwd) throws SQLException {
-		return Broker.get().getDB(email, pwd);
+		return BrokerAlarcos.get().getDB(email, pwd);
 	}
 	
 	public static void registrarConGoogle(String email) throws SQLException {
-		Connection bd=Broker.get().getDBPrivilegiada();
+		Connection bd=BrokerAlarcos.get().getDBPrivilegiada();
 		try {
 			String sql="{call insertarUsuarioGoogle (?, ?, ?, ?, ?)}";
 			CallableStatement cs=bd.prepareCall(sql);
 			cs.setString(1, email);
-			cs.setString(2, Broker.get().GOOGLE_PWD);
+			cs.setString(2, BrokerAlarcos.get().GOOGLE_PWD);
 			cs.registerOutParameter(3, java.sql.Types.VARCHAR);
 			cs.registerOutParameter(4, java.sql.Types.VARCHAR);
 			cs.registerOutParameter(5, java.sql.Types.VARCHAR);
@@ -74,7 +74,7 @@ public class DAOUser {
 		catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		return Broker.get().getGoogleDB(email);
+		return BrokerAlarcos.get().getGoogleDB(email);
 	}
 
 	public static void select(Connection bd, String email, User jugador) throws SQLException {

@@ -1,0 +1,7 @@
+servidor
+- mensaje -1-1 echar de la partida
+- guardar rankings
+
+- ultima conexion a jugadores
+- robot
+- cargar sudokus al azar

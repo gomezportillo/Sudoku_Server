@@ -15,7 +15,7 @@ import com.maco.juegosEnGrupo.server.dominio.Match;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.jsonMessages.LoginMessageAnnouncement;
 import edu.uclm.esi.common.server.domain.User;
-import edu.uclm.esi.common.server.persistence.Broker;
+import edu.uclm.esi.common.server.persistence.BrokerAlarcos;
 
 public class Manager {
 	private static Manager yo;
@@ -25,9 +25,9 @@ public class Manager {
 	private Hashtable<Integer, Game> games;
 
 	private Manager() {
-		this.usersByEmail=new Hashtable<String, User>();
-		this.usersById=new Hashtable<Integer, User>();
-		this.games=new Hashtable<Integer, Game>();
+		this.usersByEmail = new Hashtable<String, User>();
+		this.usersById = new Hashtable<Integer, User>();
+		this.games = new Hashtable<Integer, Game>();
 
 		try {
 			this.loadAllGames();
@@ -83,7 +83,7 @@ public class Manager {
 	}
 
 	public Vector<Game> loadAllGames() throws SQLException {
-		Connection bd=Broker.get().getDBPrivilegiada();
+		Connection bd=BrokerAlarcos.get().getDBPrivilegiada();
 		Vector<Game> result=new Vector<Game>();
 		String sql="Select id, name, playersMin, playersMax from Game order by name";
 		PreparedStatement ps=bd.prepareStatement(sql);

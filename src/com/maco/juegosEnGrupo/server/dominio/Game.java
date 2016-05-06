@@ -80,6 +80,10 @@ public class Game {
 		this.matches.put(match.hashCode(), match);
 	}
 
+	public void remove(Match match) {
+		this.matches.remove(match.hashCode());
+	}
+	
 	public Match findMatchById(int idMatch, int idUser) throws Exception {
 		Match match=this.matches.get(idMatch);
 		if (match==null)
