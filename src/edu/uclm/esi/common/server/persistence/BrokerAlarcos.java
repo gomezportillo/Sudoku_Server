@@ -6,12 +6,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Broker {
+public class BrokerAlarcos {
 	public final String GOOGLE_PWD = "JugadorGoogle35";
-	private static Broker yo;
+	private static BrokerAlarcos yo;
 	private String url;
 	
-	private Broker() {
+	private BrokerAlarcos() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			this.url="jdbc:mysql://alarcosj.esi.uclm.es:3306/juegos?noAccessToProcedureBodies=true";
@@ -20,9 +20,9 @@ public class Broker {
 		}
 	}
 	
-	public static Broker get() {
+	public static BrokerAlarcos get() {
 		if (yo==null)
-			yo=new Broker();
+			yo=new BrokerAlarcos();
 		return yo;
 	}
 	

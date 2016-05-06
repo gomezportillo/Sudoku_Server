@@ -22,7 +22,7 @@ public class GetRankings extends JSONAction {
 			//Manager manager=Manager.get();
 			//User user=manager.findUserById(this.idUser);
 			if (this.idGame == Sudoku.SUDOKU) 
-				this.rankings = "No te preocupes por los rankins, ya te digo yo que no vas ganando";
+				this.rankings = this.getSudokuRankings();
 			else
 				this.rankings = "Aun no guardamos rankings de este tipo de juego";
 
@@ -32,6 +32,10 @@ public class GetRankings extends JSONAction {
 			ActionContext.getContext().getSession().put("exception", e);
 			return ERROR;
 		}
+	}
+
+	private String getSudokuRankings() {
+		return "Macario - 100000;Pedroma - 20;Lemus - 1";
 	}
 
 	@Override

@@ -7,5 +7,6 @@ encoding//src/edu/uclm/esi/common/server/actions/LoginWithGoogle.java=UTF-8
 encoding//src/edu/uclm/esi/common/server/actions/Logout.java=UTF-8
 encoding//src/edu/uclm/esi/common/server/actions/RecoverPwd.java=UTF-8
 encoding//src/edu/uclm/esi/common/server/actions/Register.java=UTF-8
-encoding//src/edu/uclm/esi/common/server/persistence/Broker.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/persistence/BrokerAlarcos.java=UTF-8
+encoding//src/edu/uclm/esi/common/server/persistence/BrokerRankings.java=UTF-8
 encoding//src/edu/uclm/esi/common/server/persistence/DAOUser.java=UTF-8
