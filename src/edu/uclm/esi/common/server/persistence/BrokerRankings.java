@@ -51,7 +51,7 @@ public class BrokerRankings {
 	public String getRankings(String separator, String separator2) {
 		String msg = "";
 		Enumeration<String> enumer = this.rankings.keys();
-		
+
 		String email;
 		while (enumer.hasMoreElements()) {
 			email = enumer.nextElement(); 
@@ -61,7 +61,12 @@ public class BrokerRankings {
 	}
 
 	public void addAVictory(String email){
-		int victories = this.rankings.get(email);
+		int victories = 0;
+		try{ //the user may be new
+			victories = this.rankings.get(email);
+		}catch(Exception e){
+			//System.out.println(e);
+		}
 		this.rankings.remove(email);
 		this.rankings.put(email, victories+1);
 		this.saveRankings();
