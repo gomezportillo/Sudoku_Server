@@ -48,27 +48,27 @@ public class BrokerRankings {
 
 	}
 
-	public String getRankings() {
-		this.loadRankings();
+	public String getRankings(String separator, String separator2) {
 		String msg = "";
 		Enumeration<String> enumer = this.rankings.keys();
 		
 		String email;
 		while (enumer.hasMoreElements()) {
 			email = enumer.nextElement(); 
-			msg += email +" " + this.rankings.get(email) + ";";
+			msg += email +separator+ this.rankings.get(email) +separator2;
 		}
 		return msg;
 	}
 
 	public void addAVictory(String email){
 		int victories = this.rankings.get(email);
+		this.rankings.remove(email);
 		this.rankings.put(email, victories+1);
 		this.saveRankings();
 	}
 
 	public void saveRankings(){
-		String txtRankings = this.getRankings();
+		String txtRankings = this.getRankings(";","\r\n");
 		try{
 			File file = new File(sudokuDir);
 			FileWriter fw = new FileWriter (file, false);

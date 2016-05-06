@@ -12,6 +12,7 @@ import com.maco.juegosEnGrupo.server.dominio.Match;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.server.domain.Manager;
 import edu.uclm.esi.common.server.domain.User;
+import edu.uclm.esi.common.server.persistence.BrokerRankings;
 
 public class Sudoku extends Match {
 	public static int SUDOKU = 3;
@@ -87,8 +88,10 @@ public class Sudoku extends Match {
 		 * terminar la partida y
 		 * actualizar la bbdd con la victoria de este jugador  
 		 */
-		
 		User opponent = this.getOppositetUser(user);
+		
+		BrokerRankings.get().addAVictory(opponent.getEmail());
+		
 		double finishTime = (System.currentTimeMillis() - this.startingTime) / 1000;
 		SudokuWinnerMessage swm = new SudokuWinnerMessage(opponent.getEmail(), finishTime);
 		opponent.addMensajePendiente(swm);
@@ -96,8 +99,6 @@ public class Sudoku extends Match {
 		Manager m = Manager.get();
 		Game g = m.findGameById(Sudoku.SUDOKU);
 		g.remove(this);
-		
-		
 		
 	}
 
@@ -111,6 +112,8 @@ public class Sudoku extends Match {
 		this.updateTableroPlayer(player, mov.getRow(), mov.getCol(), mov.getValue());
 
 		if (checkWinnerTablero(player) == true) { //tenemos ganador; mandamos el winnermessage a ambos jugadores
+			BrokerRankings.get().addAVictory(player.getEmail());
+			
 			double finishTime = (System.currentTimeMillis() - this.startingTime) / 1000;
 			SudokuWinnerMessage swm = new SudokuWinnerMessage(player.getEmail(), finishTime);
 			this.players.get(0).addMensajePendiente(swm);

@@ -37,7 +37,7 @@ public class GetRankings extends JSONAction {
 
 	private String getSudokuRankings() {
 		BrokerRankings br = BrokerRankings.get();
-		return br.getRankings();
+		return br.getRankings(" ", ";");
 	}
 
 	@Override
