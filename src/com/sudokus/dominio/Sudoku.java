@@ -171,5 +171,7 @@ public class Sudoku extends Match {
 
 	public String getCasillas() { return this.tablero; }
 
+	@Override
+	public double getStartingTime() { return this.startingTime; }
 }
 

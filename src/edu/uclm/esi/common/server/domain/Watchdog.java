@@ -1,7 +1,10 @@
 package edu.uclm.esi.common.server.domain;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
 
 import com.pedroma.juegosEnGrupo.server.dominio.Game;
 import com.pedroma.juegosEnGrupo.server.dominio.Match;
@@ -9,19 +12,25 @@ import com.sudokus.dominio.Sudoku;
 
 public class Watchdog implements Runnable {
 
+	private final String[] names;
+	private List<SudokuBot> players;
 	private Manager manager;
-
+	
 	public Watchdog(Manager m){
 		this.manager = m;
+		players = new ArrayList<SudokuBot>();
+		names = new String[]{"xXxMinecr69xXx@mail.es","_cod_TrickShooter_3_@mail.es","56byKiLLeR56@mail.es"};
 	}
 
 	public void run() {
 		while (true) {
 			try {
+				
 				this.checkLastConnection();				
 
 				this.checkPlayerWaiting();
 
+				this.moveRobotPlayers();
 				Thread.sleep(10000);
 			} catch (InterruptedException e) {
 				System.out.println(e);
@@ -30,9 +39,9 @@ public class Watchdog implements Runnable {
 	}
 
 	private void checkLastConnection() {
-		Iterator<User> it = this.manager.getAllUsers();
 		double tenSecondsAgo = System.currentTimeMillis() - 10000;
-
+		Iterator<User> it = this.manager.getAllUsers();
+		
 		for (User user; it.hasNext();) {
 			user = it.next();
 			if (user.getLastConnection() < tenSecondsAgo) {
@@ -43,10 +52,27 @@ public class Watchdog implements Runnable {
 		}
 	}
 
-	private void checkPlayerWaiting() {
-		Game g = this.manager.findGameById(Sudoku.SUDOKU); //borramos la partida del manager
+	private void checkPlayerWaiting() { //guardar un array con los match en los que hay un jugador de bromi
+		double tenSecondsAgo = System.currentTimeMillis() - 10000;
+		Game g = this.manager.findGameById(Sudoku.SUDOKU); 
 		Iterator<Match> it = g.getAllMatches();
 		
+		for (Match match; it.hasNext();) {
+			match = it.next();
+			
+			if(!match.isComplete() && match.getStartingTime() < tenSecondsAgo){ 
+				SudokuBot bot = new SudokuBot(this.names[new Random().nextInt(3)]);
+				this.players.add(bot);
+				bot.addToMatch(match);
+			}
+		}
+		
+	}
+	
+	private void moveRobotPlayers() {
+		for (SudokuBot bot : this.players){
+			bot.move();
+		}
 	}
 }
 

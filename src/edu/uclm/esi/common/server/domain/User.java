@@ -7,6 +7,8 @@ import java.util.Vector;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.pedroma.juegosEnGrupo.server.dominio.Match;
+
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.jsonMessages.LoginMessageAnnouncement;
 import edu.uclm.esi.common.server.persistence.DAOUser;
@@ -36,6 +38,9 @@ public class User {
 		this.userType=userType;
 	}
 	
+	public User(String email) {
+		this.email = email;
+	}
 	
 	public static Connection identify(String email, String pwd) throws SQLException {
 		return DAOUser.identificar(email, pwd);

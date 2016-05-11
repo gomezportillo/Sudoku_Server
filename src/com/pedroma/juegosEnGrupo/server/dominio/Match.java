@@ -16,7 +16,7 @@ import edu.uclm.esi.common.server.domain.User;
 public abstract class Match {
 	protected Vector<User> players;
 	protected Game game;
-	
+
 	public Match(Game game) {
 		this.game=game;
 		this.players=new Vector<User>();
@@ -32,7 +32,7 @@ public abstract class Match {
 		this.players.add(user);
 		postAddUser(user);
 	}
-	
+
 	protected abstract void postAddUser(User user) throws Exception;
 
 	public boolean isPlaying(int idUser) {
@@ -43,13 +43,14 @@ public abstract class Match {
 	}
 
 	public static Match build(Game game) {
-		if (game.getId()==1)
-			return new TresEnRaya(game);
-		if (game.getId()==2)
-			return null; //monopolly
-		if (game.getId()==3)
-			return new Sudoku(game);
-		return null;
+		switch(game.getId()) {
+			case (1):
+				return new TresEnRaya(game);
+			case (3):
+				return new Sudoku(game);
+			default:
+				return null;
+		}
 	}
 
 	@Override
@@ -58,11 +59,12 @@ public abstract class Match {
 	public void move(User user, JSONObject jsoMovement) throws Exception {
 		if (!isTheTurnOf(user))
 			throw new Exception("It's not your turn");
-		
+
 		postMove(user, jsoMovement);
 	}
 	protected abstract void postMove(User user, JSONObject jsoMovement) throws Exception;
-	
+
 	protected abstract boolean isTheTurnOf(User user);
 	protected abstract void updateBoard(int row, int col, JSONMessage result) throws JSONException, IOException;
+	public abstract double getStartingTime();
 }
