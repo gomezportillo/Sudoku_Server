@@ -11,8 +11,8 @@ import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Vector;
 
-import com.maco.juegosEnGrupo.server.dominio.Game;
-import com.maco.juegosEnGrupo.server.dominio.Match;
+import com.pedroma.juegosEnGrupo.server.dominio.Game;
+import com.pedroma.juegosEnGrupo.server.dominio.Match;
 
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.jsonMessages.LoginMessageAnnouncement;

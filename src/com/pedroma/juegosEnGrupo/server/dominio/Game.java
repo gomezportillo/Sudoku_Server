@@ -1,7 +1,8 @@
-package com.maco.juegosEnGrupo.server.dominio;
+package com.pedroma.juegosEnGrupo.server.dominio;
 
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.Iterator;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -91,5 +92,9 @@ public class Game {
 		if (!match.isPlaying(idUser))
 			throw new Exception("You are not playing this match");
 		return match;
+	}
+	
+	public Iterator<Match> getAllMatches(){
+		 return this.matches.values().iterator();
 	}
 }

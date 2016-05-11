@@ -1,12 +1,12 @@
-package com.maco.juegosEnGrupo.server.actions;
+package com.pedroma.juegosEnGrupo.server.actions;
 
 import java.util.Vector;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import com.maco.juegosEnGrupo.server.dominio.Game;
 import com.opensymphony.xwork2.ActionContext;
+import com.pedroma.juegosEnGrupo.server.dominio.Game;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.GameListMessage;

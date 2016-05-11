@@ -6,8 +6,8 @@ import java.util.Random;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.maco.juegosEnGrupo.server.dominio.Game;
-import com.maco.juegosEnGrupo.server.dominio.Match;
+import com.pedroma.juegosEnGrupo.server.dominio.Game;
+import com.pedroma.juegosEnGrupo.server.dominio.Match;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;

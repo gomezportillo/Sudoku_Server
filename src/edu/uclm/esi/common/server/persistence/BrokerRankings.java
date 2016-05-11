@@ -10,7 +10,7 @@ import java.util.Hashtable;
 
 import org.omg.Messaging.SyncScopeHelper;
 
-import com.maco.juegosEnGrupo.server.dominio.Match;
+import com.pedroma.juegosEnGrupo.server.dominio.Match;
 
 public class BrokerRankings {
 

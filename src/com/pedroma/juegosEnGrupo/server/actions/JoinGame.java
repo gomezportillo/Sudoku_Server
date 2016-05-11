@@ -1,10 +1,9 @@
-package com.maco.juegosEnGrupo.server.actions;
+package com.pedroma.juegosEnGrupo.server.actions;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.maco.juegosEnGrupo.server.dominio.Game;
-import com.maco.juegosEnGrupo.server.dominio.Match;
 import com.opensymphony.xwork2.ActionContext;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
@@ -15,11 +14,10 @@ import edu.uclm.esi.common.server.domain.Manager;
 import edu.uclm.esi.common.server.domain.User;
 
 @SuppressWarnings("serial")
-public class SendMovement extends JSONAction {
+public class JoinGame extends JSONAction {
 	private int idUser;
 	private int idGame;
 	private int idMatch;
-	private JSONObject jsoMovement;
 	
 	@Override
 	public String postExecute() {
@@ -28,11 +26,8 @@ public class SendMovement extends JSONAction {
 			User user=manager.findUserById(this.idUser);
 			if (user==null)
 				throw new Exception("Usuario no autenticado");
-			Game g=manager.findGameById(idGame);
-			Match match=g.findMatchById(idMatch, idUser);
-			match.move(user, this.jsoMovement);
+			this.idMatch=manager.add(idGame, idUser);
 			return SUCCESS;
-			
 		} catch (Exception e) {
 			this.exception=e;
 			ActionContext.getContext().getSession().put("exception", e);
@@ -45,18 +40,25 @@ public class SendMovement extends JSONAction {
 		JSONMessage jso;
 		if (this.exception!=null)
 			jso=new ErrorMessage(this.exception.getMessage());
-		else
-			jso=new OKMessage();
+		else {
+			JSONArray jsa=new JSONArray();
+			try {
+				jsa.put(0, idMatch);
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+			jso=new OKMessage(jsa);
+		}
 		return jso.toJSONObject().toString();
 	}
 
 	@Override
 	public void setCommand(String cmd) {
+		JSONObject jso;
 		try {
-			this.jsoMovement = new JSONObject(cmd);
-			this.idUser= jsoMovement.getInt("idUser");
-			this.idGame = jsoMovement.getInt("idGame"); //3
-			this.idMatch = jsoMovement.getInt("idMatch");
+			jso = new JSONObject(cmd);
+			this.idUser=jso.getInt("idUser");
+			this.idGame=jso.getInt("idGame");
 		} catch (JSONException e) {
 			this.exception=e;
 		}
@@ -68,9 +70,5 @@ public class SendMovement extends JSONAction {
 	
 	public void setIdGame(int idGame) {
 		this.idGame = idGame;
-	}
-	
-	public void setIdMatch(int idMatch) {
-		this.idMatch=idMatch;
 	}
 }

@@ -1,14 +1,12 @@
 package com.sudokus.dominio;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.Arrays;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.maco.juegosEnGrupo.server.dominio.Game;
-import com.maco.juegosEnGrupo.server.dominio.Match;
+import com.pedroma.juegosEnGrupo.server.dominio.Game;
+import com.pedroma.juegosEnGrupo.server.dominio.Match;
 
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
 import edu.uclm.esi.common.server.domain.Manager;
@@ -23,12 +21,8 @@ public class Sudoku extends Match {
 
 	public Sudoku(Game game) {
 		super(game);
-		generateRandomSudoku();
-		this.setStartingTime(System.currentTimeMillis());
-	}
-
-	private void setStartingTime(long currentTime) {
-		this.startingTime = currentTime; 
+		this.generateRandomSudoku();
+		this.startingTime = System.currentTimeMillis();
 	}
 
 	private void generateRandomSudoku() {

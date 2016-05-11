@@ -1,4 +1,4 @@
-package com.maco.juegosEnGrupo.server.actions;
+package com.pedroma.juegosEnGrupo.server.actions;
 
 import org.json.JSONException;
 import org.json.JSONObject;

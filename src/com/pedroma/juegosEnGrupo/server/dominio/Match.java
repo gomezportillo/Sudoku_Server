@@ -1,4 +1,4 @@
-package com.maco.juegosEnGrupo.server.dominio;
+package com.pedroma.juegosEnGrupo.server.dominio;
 
 import java.io.IOException;
 import java.util.Vector;

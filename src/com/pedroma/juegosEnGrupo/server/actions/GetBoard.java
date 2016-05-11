@@ -1,11 +1,11 @@
-package com.maco.juegosEnGrupo.server.actions;
+package com.pedroma.juegosEnGrupo.server.actions;
 
 import org.json.JSONException;
 
-import com.maco.juegosEnGrupo.server.dominio.Game;
-import com.maco.juegosEnGrupo.server.dominio.Match;
 import com.maco.tresenraya.jsonMessages.TresEnRayaBoardMessage;
 import com.opensymphony.xwork2.ActionContext;
+import com.pedroma.juegosEnGrupo.server.dominio.Game;
+import com.pedroma.juegosEnGrupo.server.dominio.Match;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
