@@ -19,7 +19,9 @@ public class SudokuBot extends User{
 		try {
 			this.match = match;
 			match.add(this);
-		} catch (Exception e) {}
+		} catch (Exception e) {
+			
+		}
 	}
 
 	public void move() {

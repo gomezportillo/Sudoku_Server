@@ -26,20 +26,20 @@ public class Watchdog implements Runnable {
 		while (true) {
 			try {
 				
-				this.checkLastConnection();				
+				//this.checkLastConnection();				
 
 				this.checkPlayerWaiting();
 
 				this.moveRobotPlayers();
 				Thread.sleep(10000);
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				System.out.println(e);
 			}
 		}
 	}
 
 	private void checkLastConnection() {
-		double tenSecondsAgo = System.currentTimeMillis() - 10000;
+		double tenSecondsAgo = System.currentTimeMillis() - 50000;
 		Iterator<User> it = this.manager.getAllUsers();
 		
 		for (User user; it.hasNext();) {
@@ -54,7 +54,7 @@ public class Watchdog implements Runnable {
 
 	private void checkPlayerWaiting() { //guardar un array con los match en los que hay un jugador de bromi
 		double tenSecondsAgo = System.currentTimeMillis() - 10000;
-		Game g = this.manager.findGameById(Sudoku.SUDOKU); 
+		Game g = this.manager.findGameById(3); 
 		Iterator<Match> it = g.getAllMatches();
 		
 		for (Match match; it.hasNext();) {

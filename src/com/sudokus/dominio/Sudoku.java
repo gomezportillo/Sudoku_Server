@@ -46,7 +46,7 @@ public class Sudoku extends Match {
 
 				JSONMessage jsBoardB = new SudokuBoardMessage(this.tablero, b.getEmail(), a.getEmail(), this.hashCode());
 				b.addMensajePendiente(jsBoardB);
-
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

@@ -31,14 +31,14 @@ public class Manager {
 		this.usersByEmail = new Hashtable<String, User>();
 		this.usersById = new Hashtable<Integer, User>();
 		this.games = new Hashtable<Integer, Game>();
-		this.watchdog = new Thread(new Watchdog(this));	
-		this.watchdog.start();
-		
 		try {	
 			this.loadAllGames();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		this.watchdog = new Thread(new Watchdog(this));	
+		this.watchdog.start();
+		
 	}
 
 	public static Manager get() {

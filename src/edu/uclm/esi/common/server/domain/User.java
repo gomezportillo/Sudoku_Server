@@ -21,7 +21,7 @@ public class User {
 	private String ip;
 	private String userType;
 	private Vector<JSONMessage> mensajesPendientes;
-	
+
 	private String tablero;
 	private double lastConnection;
 
@@ -37,11 +37,12 @@ public class User {
 		DAOUser.select(bd, email, this);
 		this.userType=userType;
 	}
-	
+
 	public User(String email) {
+		this();
 		this.email = email;
 	}
-	
+
 	public static Connection identify(String email, String pwd) throws SQLException {
 		return DAOUser.identificar(email, pwd);
 	}
@@ -77,11 +78,11 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+
 	public Connection getDB() {
 		return db;
 	}
-	
+
 	public String getUserType() {
 		return userType;
 	}
@@ -107,7 +108,7 @@ public class User {
 		return this.mensajesPendientes;
 	}
 
-		
+
 	public String getTablero() {
 		return tablero;
 	}
@@ -119,13 +120,13 @@ public class User {
 
 	public void addMensajePendiente(JSONMessage jsm) {
 		this.mensajesPendientes.add(jsm);
-		
+
 	}
 
 	public void borrarMensajesPendientes() {
 		this.mensajesPendientes = new Vector<JSONMessage>();
 	}
-	
+
 	public double getLastConnection() {
 		return this.lastConnection;
 	}
