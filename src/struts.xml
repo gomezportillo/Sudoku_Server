@@ -56,26 +56,26 @@
 	</package>
 	
 	<package name="games" namespace="/" extends="json-default">
-		<action name="GameList" class="com.maco.juegosEnGrupo.server.actions.GameList">
+		<action name="GameList" class="com.pedroma.juegosEnGrupo.server.actions.GameList">
 			<result name="success" type="json"/>
 			<result name="error" type="json"/>
 		</action>
 		
-		<action name="JoinGame" class="com.maco.juegosEnGrupo.server.actions.JoinGame">
+		<action name="JoinGame" class="com.pedroma.juegosEnGrupo.server.actions.JoinGame">
 			<result name="success" type="json"/>
 			<result name="error" type="json"/>
 		</action>
 		
-		<action name="GetRankings" class="com.maco.juegosEnGrupo.server.actions.GetRankings">
+		<action name="GetRankings" class="com.pedroma.juegosEnGrupo.server.actions.GetRankings">
 			<result name="success" type="json"/>
 			<result name="error" type="json"/>
 		</action>
 		
-		<action name="GetBoard" class="com.maco.juegosEnGrupo.server.actions.GetBoard">
+		<action name="GetBoard" class="com.pedroma.juegosEnGrupo.server.actions.GetBoard">
 			<result name="success" type="json"/>
 			<result name="error" type="json"/>
 		</action>
-		<action name="SendMovement" class="com.maco.juegosEnGrupo.server.actions.SendMovement">
+		<action name="SendMovement" class="com.pedroma.juegosEnGrupo.server.actions.SendMovement">
 			<result name="success" type="json"/>
 			<result name="error" type="json"/>
 		</action>
