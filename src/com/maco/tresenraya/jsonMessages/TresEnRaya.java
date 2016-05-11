@@ -11,7 +11,6 @@ import com.pedroma.juegosEnGrupo.server.dominio.Match;
 
 import edu.uclm.esi.common.jsonMessages.ErrorMessage;
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
-import edu.uclm.esi.common.jsonMessages.OKMessage;
 import edu.uclm.esi.common.server.domain.User;
 
 
@@ -81,6 +80,7 @@ public class TresEnRaya extends Match {
 		return this.userWithTurn.equals(user);
 	}
 
+	@SuppressWarnings("unused")
 	@Override
 	protected void postAddUser(User user) {
 		if (this.players.size()==2) {
@@ -106,5 +106,11 @@ public class TresEnRaya extends Match {
 			//TODO: notificar espera
 		}
 		
+	}
+
+	@Override
+	public double getStartingTime() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

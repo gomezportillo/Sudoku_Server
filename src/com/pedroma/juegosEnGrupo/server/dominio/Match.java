@@ -10,7 +10,6 @@ import com.maco.tresenraya.jsonMessages.TresEnRaya;
 import com.sudokus.dominio.Sudoku;
 
 import edu.uclm.esi.common.jsonMessages.JSONMessage;
-import edu.uclm.esi.common.jsonMessages.OKMessage;
 import edu.uclm.esi.common.server.domain.User;
 
 public abstract class Match {
