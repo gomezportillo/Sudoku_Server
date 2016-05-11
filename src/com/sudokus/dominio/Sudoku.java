@@ -1,6 +1,7 @@
 package com.sudokus.dominio;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.Arrays;
 
 import org.json.JSONException;
@@ -97,7 +98,12 @@ public class Sudoku extends Match {
 		opponent.addMensajePendiente(swm);
 
 		Manager m = Manager.get();
-		Game g = m.findGameById(Sudoku.SUDOKU);
+		/**
+		try {
+			m.closeSession(opponent); //cerramos la sesion del jugador
+		} catch (SQLException e) {}
+		*/
+		Game g = m.findGameById(Sudoku.SUDOKU); //borramos la partida del manager
 		g.remove(this);
 		
 	}

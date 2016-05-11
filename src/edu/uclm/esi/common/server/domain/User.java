@@ -20,14 +20,15 @@ public class User {
 	private String userType;
 	private Vector<JSONMessage> mensajesPendientes;
 	
-	private String tablero; 
+	private String tablero;
+	private double lastConnection;
 
 
 	public User() {
 		this.mensajesPendientes = new Vector<JSONMessage>();
+		this.lastConnection = System.currentTimeMillis();
 	}
 
-	
 	public User(Connection bd, String email, String userType) throws SQLException {
 		this();
 		this.db=bd;
@@ -118,5 +119,13 @@ public class User {
 
 	public void borrarMensajesPendientes() {
 		this.mensajesPendientes = new Vector<JSONMessage>();
+	}
+	
+	public double getLastConnection() {
+		return this.lastConnection;
+	}
+
+	public void setLastConnection(double lc) {
+		this.lastConnection = lc;
 	}
 }

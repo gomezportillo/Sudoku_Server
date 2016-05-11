@@ -5,8 +5,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.Vector;
 
 import com.maco.juegosEnGrupo.server.dominio.Game;
@@ -23,13 +25,16 @@ public class Manager {
 	private Hashtable<String, User> usersByEmail;
 	private Hashtable<Integer, User> usersById;
 	private Hashtable<Integer, Game> games;
+	private Thread watchdog;
 
 	private Manager() {
 		this.usersByEmail = new Hashtable<String, User>();
 		this.usersById = new Hashtable<Integer, User>();
 		this.games = new Hashtable<Integer, Game>();
-
-		try {
+		this.watchdog = new Thread(new Watchdog(this));	
+		this.watchdog.start();
+		
+		try {	
 			this.loadAllGames();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -70,6 +75,11 @@ public class Manager {
 		return this.usersByEmail.get(email);
 	}
 
+	public Iterator<User> getAllUsers(){
+		return this.usersByEmail.values().iterator();
+		
+	}
+	
 	public User closeSession(User user) throws SQLException {
 		user=usersById.remove(user.getId());
 		if (user!=null) {
