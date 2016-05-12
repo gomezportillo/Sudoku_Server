@@ -19,7 +19,7 @@ public class Watchdog implements Runnable {
 	public Watchdog(Manager m){
 		this.manager = m;
 		players = new ArrayList<SudokuBot>();
-		names = new String[]{"xXxMinecr69xXx@mail.es","_cod_TrickShooter_3_@mail.es","56byKiLLeR56@mail.es"};
+		names = new String[]{"xXxMinecr69xXx@mail.es","_cod_TrickShooter_3_@mail.es","56byKiLLeR56@mail.es", "nAxXGaMerr@mail.es"};
 	}
 
 	public void run() {
@@ -28,7 +28,7 @@ public class Watchdog implements Runnable {
 				
 				//this.checkLastConnection();				
 
-				this.checkPlayerWaiting();
+				this.checkWaitingPlayer();
 
 				this.moveRobotPlayers();
 				Thread.sleep(10000);
@@ -52,7 +52,7 @@ public class Watchdog implements Runnable {
 		}
 	}
 
-	private void checkPlayerWaiting() { //guardar un array con los match en los que hay un jugador de bromi
+	private void checkWaitingPlayer() { //guardar un array con los match en los que hay un jugador de bromi
 		double tenSecondsAgo = System.currentTimeMillis() - 10000;
 		Game g = this.manager.findGameById(3); 
 		Iterator<Match> it = g.getAllMatches();
@@ -60,13 +60,12 @@ public class Watchdog implements Runnable {
 		for (Match match; it.hasNext();) {
 			match = it.next();
 			
-			if(!match.isComplete() && match.getStartingTime() < tenSecondsAgo){ 
-				SudokuBot bot = new SudokuBot(this.names[new Random().nextInt(3)]);
+			if(!match.isComplete() && match.getStartingTime() < tenSecondsAgo) { 
+				SudokuBot bot = new SudokuBot(this.names[new Random().nextInt(4)]);
 				this.players.add(bot);
 				bot.addToMatch(match);
 			}
-		}
-		
+		}	
 	}
 	
 	private void moveRobotPlayers() {

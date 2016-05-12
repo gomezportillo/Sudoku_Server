@@ -27,7 +27,7 @@ public class SudokuBot extends User{
 	public void move() {
 		int col = new Random().nextInt(9);
 		int row = new Random().nextInt(9);
-		int value = 0;
+		int value = 1;
 		int idUser = 0;
 		int idMatch = 0;
 		
