@@ -1,6 +1,11 @@
 package com.sudokus.dominio;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.util.Random;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -18,6 +23,7 @@ public class Sudoku extends Match {
 	private String tablero;
 	private String tableroSolucion;
 	private double startingTime;
+	private final String sudokusDir = "C:\\Users\\pedroma\\workspace\\web_eclipse\\JuegosEnGrupo\\data\\sudokus\\";
 
 	public Sudoku(Game game) {
 		super(game);
@@ -26,17 +32,26 @@ public class Sudoku extends Match {
 	}
 
 	private void generateRandomSudoku() {
-		String tablero_bueno = "003020600900305001001806400008102900700000008006708200002609500800203009005010300";
-
-		this.tableroSolucion = "483921657967345821251876493548132976729564138136798245372689514814253769695417382";
-		this.tablero = "483921657967345821251870493548132976729564138136798245372689514014253769695417382";
+		int id = new Random().nextInt(50);
+		String file = "sudoku"+ id +".txt";
+		String filename = sudokusDir + file;
+		try {
+			File sudokuFile = new File(filename);
+			FileReader fr = new FileReader (sudokuFile);
+			BufferedReader br = new BufferedReader(fr);
+			this.tablero = br.readLine();
+			this.tableroSolucion = br.readLine();
+			br.close();
+		} catch (IOException e) {
+			System.out.println(e);
+		}
 	}
 
 	@Override
 	protected void postAddUser(User user) {
 		if (this.players.size()==2) {
 			try {
-				this.setTableroDeJugadores(this.tablero);
+				this.setTableroDeJugadores();
 
 				User a = this.players.get(0);
 				User b = this.players.get(1);
@@ -46,7 +61,7 @@ public class Sudoku extends Match {
 
 				JSONMessage jsBoardB = new SudokuBoardMessage(this.tablero, b.getEmail(), a.getEmail(), this.hashCode());
 				b.addMensajePendiente(jsBoardB);
-				
+
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -84,9 +99,9 @@ public class Sudoku extends Match {
 		 * actualizar la bbdd con la victoria de este jugador  
 		 */
 		User opponent = this.getOppositetUser(user);
-		
+
 		BrokerRankings.get().addAVictory(opponent.getEmail());
-		
+
 		double finishTime = (System.currentTimeMillis() - this.startingTime) / 1000;
 		SudokuWinnerMessage swm = new SudokuWinnerMessage(opponent.getEmail(), finishTime);
 		opponent.addMensajePendiente(swm);
@@ -96,10 +111,10 @@ public class Sudoku extends Match {
 		try {
 			m.closeSession(opponent); //cerramos la sesion del jugador
 		} catch (SQLException e) {}
-		*/
+		 */
 		Game g = m.findGameById(Sudoku.SUDOKU); //borramos la partida del manager
 		g.remove(this);
-		
+
 	}
 
 	@Override
@@ -113,7 +128,7 @@ public class Sudoku extends Match {
 
 		if (checkWinnerTablero(player) == true) { //tenemos ganador; mandamos el winnermessage a ambos jugadores
 			BrokerRankings.get().addAVictory(player.getEmail());
-			
+
 			double finishTime = (System.currentTimeMillis() - this.startingTime) / 1000;
 			SudokuWinnerMessage swm = new SudokuWinnerMessage(player.getEmail(), finishTime);
 			this.players.get(0).addMensajePendiente(swm);
@@ -164,12 +179,12 @@ public class Sudoku extends Match {
 		return "Partida de Sudoku: " + player1 + " VS. " + player2;
 	}
 
-	public void setTableroDeJugadores(String casillas) { 
-		this.players.get(0).setTablero(casillas);
-		this.players.get(1).setTablero(casillas);
+	public void setTableroDeJugadores() { 
+		this.players.get(0).setTablero(this.tablero);
+		this.players.get(1).setTablero(this.tablero);
 	}
 
-	public String getCasillas() { return this.tablero; }
+	public String getTablero() { return this.tablero; }
 
 	@Override
 	public double getStartingTime() { return this.startingTime; }

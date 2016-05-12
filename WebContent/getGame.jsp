@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="UTF-8"%>
-<%@ page import="com.maco.juegosEnGrupo.server.dominio.*" %>
+<%@ page import="com.pedroma.juegosEnGrupo.server.dominio.*" %>
 <%@ page import="edu.uclm.esi.common.server.domain.*" %>
 <%@ page import="edu.uclm.esi.common.server.persistence.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
