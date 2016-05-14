@@ -13,7 +13,9 @@ servidor
 
 - ultima conexion a jugadores
 
+- cargar sudokus al azar
+
 #####TODO#####
 - robot
 	* mover solo a posiciones válidas
-- cargar sudokus al azar
+

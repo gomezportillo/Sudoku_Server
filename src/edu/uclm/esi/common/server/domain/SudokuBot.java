@@ -8,34 +8,45 @@ import com.pedroma.juegosEnGrupo.server.dominio.Match;
 import com.sudokus.dominio.SudokuMovementMessage;
 
 public class SudokuBot extends User{
-	
+
 	private Match match;
-	
+
 	public SudokuBot( String email) {
 		super(email);
 	}
-	
+
 	public void addToMatch(Match match) {
 		try {
 			this.match = match;
 			match.add(this);
-		} catch (Exception e) {
-			
-		}
+		} catch (Exception e) {}
 	}
 
+	@SuppressWarnings("unused")
 	public void move() {
-		int col = new Random().nextInt(9);
-		int row = new Random().nextInt(9);
-		int value = 1;
+
+		/**
+		 * La clase sudoku va actualizando el tablero de los jugadores, por
+		 * lo que en cada getTablero obtendremos nuestro tablero actualizad.
+		 * Ahora probamos posiciones al azar hasta dar con una que aún sea 0.
+		 */
+		String current_tablero = this.getTablero(); 
+		int col, row, current_val;
+		do {
+			col = new Random().nextInt(9);
+			row = new Random().nextInt(9);
+			current_val = current_tablero.charAt(row*9+col);
+		} while (current_val != 0);
+
+		int value = 9; //this value does not matter
 		int idUser = 0;
-		int idMatch = 0;
-		
+		int idMatch = this.match.hashCode();
+
 		SudokuMovementMessage jsoMov = new SudokuMovementMessage(row, col, value, idUser, idMatch);
 		try {
 			this.match.move(this, jsoMov.toJSONObject());
 		} catch (Exception e) {
-			System.out.println("Algo salió mal. Parece que te va a tocar debugear otra vez");
+			System.out.println("Algo salió mal. Parece que te va a tocar debugear OTRA VEZ");
 		}		
 	}
 }
