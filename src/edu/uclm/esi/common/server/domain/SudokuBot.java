@@ -31,16 +31,18 @@ public class SudokuBot extends User{
 		 * Ahora probamos posiciones al azar hasta dar con una que aún sea 0.
 		 */
 		String current_tablero = this.getTablero(); 
-		int col, row, current_val;
+		int col, row, index;
+		char current_val;
 		do {
 			col = new Random().nextInt(9);
 			row = new Random().nextInt(9);
-			current_val = current_tablero.charAt(row*9+col);
-		} while (current_val != 0);
+			index = row*9+col;
+			current_val = current_tablero.charAt(index);
+		} while (current_val != '0');
 
 		int value = 9; //this value does not matter
 		int idUser = 0;
-		int idMatch = this.match.hashCode();
+		int idMatch = 0; //this.match.hashCode();
 
 		SudokuMovementMessage jsoMov = new SudokuMovementMessage(row, col, value, idUser, idMatch);
 		try {
