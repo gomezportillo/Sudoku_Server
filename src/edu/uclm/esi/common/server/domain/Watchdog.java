@@ -39,7 +39,7 @@ public class Watchdog implements Runnable {
 	}
 
 	private void checkLastConnection() {
-		double tenSecondsAgo = System.currentTimeMillis() - 50000;
+		double tenSecondsAgo = System.currentTimeMillis() - 10000;
 		Iterator<User> it = this.manager.getAllUsers();
 		
 		for (User user; it.hasNext();) {
@@ -52,7 +52,7 @@ public class Watchdog implements Runnable {
 		}
 	}
 
-	private void checkWaitingPlayer() { //guardar un array con los match en los que hay un jugador de bromi
+	private void checkWaitingPlayer() {
 		double tenSecondsAgo = System.currentTimeMillis() - 10000;
 		Game g = this.manager.findGameById(3); 
 		Iterator<Match> it = g.getAllMatches();

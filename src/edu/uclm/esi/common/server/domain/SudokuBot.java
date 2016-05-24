@@ -33,16 +33,19 @@ public class SudokuBot extends User{
 		String current_tablero = this.getTablero(); 
 		int col, row, index;
 		char current_val;
+		int n_trials = 0; //por limitar de algun modo el bucle infiniti
+		
 		do {
 			col = new Random().nextInt(9);
 			row = new Random().nextInt(9);
 			index = row*9+col;
 			current_val = current_tablero.charAt(index);
-		} while (current_val != '0');
+			n_trials += 1;
+		} while (current_val != '0' && n_trials < 99);
 
 		int value = 9; //this value does not matter
 		int idUser = 0;
-		int idMatch = 0; //this.match.hashCode();
+		int idMatch = 1; //this.match.hashCode();
 
 		SudokuMovementMessage jsoMov = new SudokuMovementMessage(row, col, value, idUser, idMatch);
 		try {
